@@ -88,16 +88,7 @@ def recommend_similar_games(game_title, top_n=5, alpha=0.5):
 # Streamlit arayüzü
 st.title("🎮 PlayStation Oyun Öneri Sistemi")
 st.markdown("Kullanıcı yorumlarına ve puanlara göre oyun önerileri sunar.")
-st.markdown("""# Ne kullandım:
-- Cosinus Similarity
-- Hybrid recommendation: `Content-Based Filtering` ve `Collaborative Filtering`
-## `Collaborative Filtering` De Ne Kullandım:
-- `Surprise` (Local only)
-- `Basic Collaborative Filtering`
-# Kendine Has Özellikler:
-- Local Olarak Kolay Başlatma: `streamlit_start.bat`
----
-""")
+
 
 # Oyun seçimi
 selected_game = st.selectbox("Bir oyun seçin:", sorted(df['Game Title'].unique()))
@@ -135,6 +126,17 @@ if st.button("Oyun Önerilerini Göster"):
         hybrid_recs = recommend_similar_games(selected_game, top_n=5, alpha=0.5)
         for game in hybrid_recs:
             st.write("🧠", game)
+st.markdown("""---
+# Ne kullandım:
+- Cosinus Similarity
+- Hybrid recommendation: `Content-Based Filtering` ve `Collaborative Filtering`
+## `Collaborative Filtering` De Ne Kullandım:
+- `Surprise` (Local only)
+- `Basic Collaborative Filtering`
+# Kendine Has Özellikler:
+- Local Olarak Kolay Başlatma: `streamlit_start.bat`
+---
+""")
 st.markdown("""
 ---
 # Fork Sayacı
