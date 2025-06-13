@@ -16,7 +16,7 @@ try:
     SURPRISE_AVAILABLE = True
 except ImportError:
     SURPRISE_AVAILABLE = False
-    st.warning("Surprise kütüphanesi yüklü değil. İşbirlikçi filtreleme için basit korelasyon kullanılacak.")
+    # st.warning("Surprise kütüphanesi yüklü değil. İşbirlikçi filtreleme için basit korelasyon kullanılacak.")
 
 # Veriyi yükle
 try:
