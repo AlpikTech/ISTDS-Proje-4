@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
-
+from pymongo import MongoClient
 # surprise kütüphanesini kontrol et
 try:
     from surprise import Dataset, Reader, KNNBasic
@@ -18,12 +18,22 @@ except ImportError:
     SURPRISE_AVAILABLE = False
     # st.warning("Surprise kütüphanesi yüklü değil. İşbirlikçi filtreleme için basit korelasyon kullanılacak.")
 
-# Veriyi yükle
-try:
-    df = pd.read_csv("video_game_reviews1.csv", delimiter=';')
-except FileNotFoundError:
-    st.error("Dosya bulunamadı. Lütfen 'video_game_reviews1.csv' dosyasının doğru konumunu kontrol edin.")
-    st.stop()
+# MongoDB bağlantısı
+client = MongoClient("mongodb+srv://Alpik:3519@istdsproje4.no9zavo.mongodb.net/")
+
+# Veritabanı ve koleksiyon seçimi
+db = client['games_data']
+collection = db['playstation']
+
+# Collection'dan tüm veriyi çek (list of dicts)
+data = list(collection.find())
+
+# Eğer _id alanı DataFrame'de sorun çıkarıyorsa kaldırabiliriz
+for doc in data:
+    doc.pop('_id', None)
+
+# Pandas DataFrame'e dönüştür
+df = pd.DataFrame(data)
 
 # İçerik tabanlı analiz için metinleri birleştir
 game_texts = df.groupby('Game Title')['User Review Text'].apply(lambda texts: " ".join(texts)).reset_index()
