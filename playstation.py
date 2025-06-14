@@ -153,6 +153,10 @@ if st.button("Oyun Önerilerini Göster"):
     if selected_game not in indices:
         st.error("Seçilen oyun veri setinde bulunamadı!")
     else:
+        # Seçilen oyun için de PS Store linkini göster
+        st.subheader("🎮 Seçilen Oyun")
+        display_game_with_link(selected_game, "🎮")
+
         st.subheader("🎯 İçerik Tabanlı Öneriler")
         st.markdown("*Oyun yorumlarına göre benzer oyunlar*")
 
@@ -189,9 +193,7 @@ if st.button("Oyun Önerilerini Göster"):
         for game in hybrid_recs:
             display_game_with_link(game, "🧠")
 
-        # Seçilen oyun için de PS Store linkini göster
-        st.subheader("🎮 Seçilen Oyun")
-        display_game_with_link(selected_game, "🎮")
+
 
 # Bilgi kutusu
 with st.expander("ℹ️ PS Store Linkleri Hakkında"):
