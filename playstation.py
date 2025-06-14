@@ -140,6 +140,7 @@ st.markdown("""---
 # Ne kullandım:
 - Cosinus Similarity
 - Hybrid recommendation: `Content-Based Filtering` ve `Collaborative Filtering`
+- `MongoDB` Database
 ## `Collaborative Filtering` De Ne Kullandım:
 - `Surprise` (Local only)
 - `Basic Collaborative Filtering`
@@ -148,7 +149,7 @@ st.markdown("""---
 ---
 """)
 st.markdown("""
----
+
 # Fork Sayacı
 [![Fork me on GitHub](https://img.shields.io/github/forks/AlpikTech/ISTDS-Proje-4?style=social)](https://github.com/AlpikTech/ISTDS-Proje-4)
 
