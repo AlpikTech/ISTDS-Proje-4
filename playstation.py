@@ -326,7 +326,6 @@ with st.expander("ℹ️ PS Store Linkleri ve Kapak Fotoğrafları Hakkında"):
     st.markdown("""
     ## **PlayStation Store Linkleri:**
     - Linkler oyun adlarından otomatik olarak oluşturulur
-    - Seçtiğiniz bölgeye göre uygun PS Store sayfasına yönlendirir
     - Bazı oyunlar farklı isimlerle mağazada bulunabilir
     - Link açılmazsa oyun adını manuel olarak PS Store'da arayabilirsiniz
 
@@ -352,7 +351,6 @@ st.markdown("""---
 # Kendine Has Özellikler:
 - Local Olarak Kolay Başlatma: `streamlit_start.bat`
 - **Yeni:** Oyun önerilerinin yanında PS Store linkleri
-- **Yeni:** Bölge seçimi ile uyumlu PS Store linkleri
 - **Yeni:** IGDB ve SteamGridDB entegrasyonu ile kapak fotoğrafları
 ---
 """)
