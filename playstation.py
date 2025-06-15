@@ -342,7 +342,7 @@ st.markdown("""---
 # Ne kullandım:
 - Cosinus Similarity
 - Hybrid recommendation: `Content-Based Filtering` ve `Collaborative Filtering`
-- `MongoDB` Database
+- `MongoDB` Database.
 - **Yeni:** PlayStation Store Link Entegrasyonu
 - **Yeni:** IGDB & SteamGridDB API entegrasyonu ile kapak fotoğrafları
 ## `Collaborative Filtering` De Ne Kullandım:
@@ -356,15 +356,15 @@ st.markdown("""---
 """)
 
 # .env dosyası örneği
-with st.expander("📄 .env Dosyası Örneği"):
-    st.code("""
+# with st.expander("📄 .env Dosyası Örneği"):
+#     st.code("""
 # IGDB API (Twitch Developer Console'dan alınır)
-IGDB_CLIENT_ID=your_igdb_client_id_here
-IGDB_ACCESS_TOKEN=your_igdb_access_token_here
+# IGDB_CLIENT_ID=your_igdb_client_id_here
+# IGDB_ACCESS_TOKEN=your_igdb_access_token_here
 
 # SteamGridDB API (steamgriddb.com'dan alınır)
-STEAMGRIDDB_API_KEY=your_steamgriddb_api_key_here
-    """, language="bash")
+# STEAMGRIDDB_API_KEY=your_steamgriddb_api_key_here
+#     """, language="bash")
 
 st.markdown("""
 
